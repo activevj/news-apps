@@ -25,7 +25,13 @@ export class AppComponent  {
 
   searchArticles(source){
     console.log("selected source is: "+source);
-    this.newsapi.getArticlesByID(source).subscribe(data=>this.mArticles=data['articles']);
+    this.newsapi.getArticlesById(source).subscribe(data=>{
+      this.mArticles=data['articles'];
+      // console.log(this.mArticles);
+      // console.log(data);
+      });
+
+
   }
 
 }
